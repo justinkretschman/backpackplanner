@@ -12,12 +12,8 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-<<<<<<< HEAD
     "react-script": "^2.0.5",
     "react-scripts": "3.4.3"
-=======
-    "react-scripts": "^3.4.4"
->>>>>>> cbe0bd6fddf8435e404a109a67b4f4d19ab3e05a
   },
   "scripts": {
     "start": "react-scripts start",
