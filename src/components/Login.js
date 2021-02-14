@@ -1,59 +1,63 @@
-import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import {
+    Jumbotron,
+    Spinner,
+    Form,
+    Button,
+    FormGroup, 
+    Label, 
+    Input
+} from 'reactstrap';
+import firebase from '../Firebase';
 
-export default function Login() {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const { login } = useAuth()
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
-  const history = useHistory()
+function Login() {
+    const history = useHistory();
+    const [creds, setCreds] = useState({ nickname: '' });
+    const [showLoading, setShowLoading] = useState(false);
+    const ref = firebase.database().ref('users/');
 
-  async function handleSubmit(e) {
-    e.preventDefault()
+    const login = (e) => {
+        e.preventDefault();
+        setShowLoading(true);
+        ref.orderByChild('nickname').equalTo(creds.nickname).once('value', snapshot => {
+            if (snapshot.exists()) {
+                localStorage.setItem('nickname', creds.nickname);
+                history.push('/roomlist');
+                setShowLoading(false);
+            } else {
+                const newUser = firebase.database().ref('users/').push();
+                newUser.set(creds);
+                localStorage.setItem('nickname', creds.nickname);
+                history.push('/roomlist');
+                setShowLoading(false);
+            }
+        });
+    };
 
-    try {
-      setError("")
-      setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
-    } catch {
-      setError("Failed to log in")
+    const onChange = (e) => {
+        e.persist();
+        setCreds({...creds, [e.target.name]: e.target.value});
     }
 
-    setLoading(false)
-  }
-
-  return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-              Log In
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup"> Sign Up</Link> <br />
-        Free membership for life if you join now!
-      </div>
-    </>
-  )
+    return (
+        <div>
+            {showLoading &&
+                <Spinner color="primary" />
+            }
+            <Jumbotron>
+                <Form onSubmit={login}>
+                    <FormGroup>
+                        <Label>Nickname</Label>
+                        <Input type="text" name="nickname" id="nickname" placeholder="Enter Your Nickname" value={creds.nickname} onChange={onChange} />
+                    </FormGroup>
+                    <Button variant="primary" type="submit">
+                        Login
+                    </Button>
+                </Form>
+            </Jumbotron>
+        </div>
+    );
 }
+
+export default Login;
