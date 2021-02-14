@@ -29,6 +29,13 @@ export default function Dashboard() {
           <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
             Update Profile
           </Link>
+          <Link className="btn btn-primary w-100 mt-3">
+            Create New Trip
+          </Link>
+          <Link className="btn btn-primary w-100 mt-3">
+            Join Existing Trip
+          </Link>
+          
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

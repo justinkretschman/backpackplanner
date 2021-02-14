@@ -12,9 +12,9 @@ import UpdateProfile from "./UpdateProfile"
 function App() {
   return (
     <>
-      <div>
-        BashPash
-      </div>
+      <h1 className="d-flex align-items-center justify-content-center">
+        BackpackPlanner
+      </h1>
       <Container
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
