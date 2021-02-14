@@ -13,6 +13,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react-scripts": "3.4.1",
     "react-scroll-to-bottom": "^4.1.0",
     "reactstrap": "^8.9.0"
@@ -24,6 +25,10 @@
     "react-scripts": "^3.4.4"
 >>>>>>> cbe0bd6fddf8435e404a109a67b4f4d19ab3e05a
 >>>>>>> 34553c6f30fc50195ca7dc8b9bbf247b4fe1dacb
+=======
+    "react-script": "^2.0.5",
+    "react-scripts": "3.4.3"
+>>>>>>> 2dbe09f424a1bc8af0c520cbc704c221bcf887ec
   },
   "scripts": {
     "start": "react-scripts start",
