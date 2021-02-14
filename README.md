@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Slack Clone
 
-## Available Scripts
+[![Star on GitHub][github-star-badge]][github-star]
+[![Tweet][twitter-badge]][twitter]
+[![Build Status][travis-badge]][travis]
 
-In the project directory, you can run:
+> Slack clone powered by [Chatkit](https://pusher.com/chatkit). See it in action here https://pusher.github.io/react-slack-clone
 
-### `npm start`
+![demo](https://user-images.githubusercontent.com/1457604/35891289-687ad6ec-0b9b-11e8-99cc-ffbad31a017e.gif)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is a static, single page web app bootstrapped with [create-react-app](https://github.com/facebookincubator/create-react-app) for ease of setup, distribution and development. It is a thin UI wrapper around the [pusher-chatkit-client](https://github.com/pusher/chatkit-client-js) library to demonstrate how different features can work together to form a compelling real-time chat client with various potential product applications.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+The Chatkit SDK allows you to implement features you would expect from a chat client. These include:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 📝 Public and private chat rooms
+* 📡 Realtime sending and receiving of messages
+* 📦 Rich media attachments (drag and drop)
+* 💬 Typing and presence indicators
+* 📚 Read message cursors
 
-### `npm run build`
+Want to get involved? We have a bunch of [beginner-friendly GitHub issues](https://github.com/pusher/react-slack-clone/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Components
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The demo attempts to be feature complete according to documentation [here](https://docs.pusher.com/chatkit/reference/javascript). Feature requests should be made via issues or pull requests to this repository.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* CreateMessageForm - to send a message with a textual body and trigger typing indicators.
+* CreateRoomForm - to create a new room and join it upon creation.
+* FileInput - to send a message with a rich media attachment.
+* Message - to render out a message that potentially includes an attachment.
+* MessageList - to render a list of messages from a key value store.
+* RoomHeader - to display useful information about a given room.
+* RoomList - to render a list of rooms which can be subscribed to by the current user.
+* TypingIndicator - to signify to the user that another user is typing in a given room.
+* UserHeader - to display useful information about a given user.
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run the application locally; clone the repo, install dependencies and run the app.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ git clone https://github.com/pusher/react-slack-clone
+$ cd react-slack-clone
+$ yarn && yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The app starts in development mode and opens a browser window on `http://localhost:3000`. The project rebuilds and the browser reloads automatically when source files are changed. Any build or runtime errors are propagated and displayed in the browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The app depends on GitHub authentication and a user creation endpoint that is hosted at https://chatkit-demo-server.herokuapp.com. The endpoints are `/auth` and `/token`.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[github-star-badge]: https://img.shields.io/github/stars/pusher/react-slack-clone.svg?style=social
+[github-star]: https://github.com/pusher/react-slack-clone/stargazers
+[twitter-badge]: https://img.shields.io/twitter/url/https/github.com/kentcdodds/react-testing-library.svg?style=social
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20this%20Slack%20clone%20using%20@pusher%20Chatkit%20%F0%9F%91%89https://github.com/pusher/react-slack-clone
+[travis-badge]: https://travis-ci.org/pusher/react-slack-clone.svg?branch=master
+[travis]: https://travis-ci.org/pusher/react-slack-clone

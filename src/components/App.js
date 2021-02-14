@@ -11,11 +11,10 @@ import UpdateProfile from "./UpdateProfile"
 
 function App() {
   return (
+    <>
+      <div>
     
-    <div style={{ 
-      backgroundImage: `("https://www.reserveamerica.com/webphotos/racms/articles/images/c58ec5b6-63d5-47c8-afd3-0085a082eb68_image2_backpacker-hero-image.jpg")` 
-    }}>
-
+      </div>
       <Container
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
@@ -34,9 +33,7 @@ function App() {
         </Router>
       </div>
     </Container>
-
-
-    </div>
+    </>
   )
 }
 
