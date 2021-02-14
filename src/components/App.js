@@ -11,10 +11,17 @@ import UpdateProfile from "./UpdateProfile"
 
 function App() {
   return (
-    <Container
+    <div style={{ 
+      backgroundImage: `https://www.reserveamerica.com/webphotos/racms/articles/images/c58ec5b6-63d5-47c8-afd3-0085a082eb68_image2_backpacker-hero-image.jpg")` 
+    }}>
+      <Container
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
     >
+      <div className="w-100" style={{ maxWidth: "400px" }}>
+        <h2 className="text-center mb-4">Free membership for life if you join now!</h2>
+        </div> 
+
       <div className="w-100" style={{ maxWidth: "400px" }}>
         <Router>
           <AuthProvider>
@@ -29,6 +36,7 @@ function App() {
         </Router>
       </div>
     </Container>
+    </div>
   )
 }
 
