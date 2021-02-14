@@ -6,29 +6,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "bootstrap": "^4.6.0",
-    "firebase": "^8.2.7",
-    "moment": "^2.29.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "bootstrap": "^4.5.0",
+    "firebase": "^7.17.1",
+    "moment": "^2.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "react-scripts": "3.4.1",
-    "react-scroll-to-bottom": "^4.1.0",
-    "reactstrap": "^8.9.0"
-=======
-<<<<<<< HEAD
-    "react-script": "^2.0.5",
-    "react-scripts": "3.4.3"
-=======
-    "react-scripts": "^3.4.4"
->>>>>>> cbe0bd6fddf8435e404a109a67b4f4d19ab3e05a
->>>>>>> 34553c6f30fc50195ca7dc8b9bbf247b4fe1dacb
-=======
-    "react-script": "^2.0.5",
-    "react-scripts": "3.4.3"
->>>>>>> 2dbe09f424a1bc8af0c520cbc704c221bcf887ec
+    "react-scroll-to-bottom": "^3.0.0",
+    "reactstrap": "^8.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
