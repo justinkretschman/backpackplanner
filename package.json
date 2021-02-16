@@ -12,8 +12,14 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+<<<<<<< HEAD
     "react-script": "^2.0.5",
     "react-scripts": "3.4.3"
+=======
+    "react-scripts": "3.4.1",
+    "react-scroll-to-bottom": "^4.1.0",
+    "reactstrap": "^8.9.0"
+>>>>>>> e68c7c52d82bb173275d9c28fd283ca69ca1f0af
   },
   "scripts": {
     "start": "react-scripts start",

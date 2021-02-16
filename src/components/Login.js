@@ -1,7 +1,22 @@
+<<<<<<< HEAD
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+=======
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import {
+    Jumbotron,
+    Spinner,
+    Form,
+    Button,
+    FormGroup, 
+    Label, 
+    Input
+} from 'reactstrap';
+import firebase from '../firebase';
+>>>>>>> e68c7c52d82bb173275d9c28fd283ca69ca1f0af
 
 export default function Login() {
   const emailRef = useRef()
